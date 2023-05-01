@@ -10,8 +10,8 @@
 
 Note: JRE is required to run **Messenger.exe** & path of JRE should be added to environment variable named as **PATH** <br />
                     OR   <br />
-open the **Code** folder in Eclipse and directly run the file **Calculator.java**
+open the **Code** folder in Eclipse and directly run the file **LoginPage.java**
 
 Also use 
-username= user1 OR user2 OR user3
-password= password
+Username= **user1** OR **user2** OR **user3** <br />
+Password= **password**
