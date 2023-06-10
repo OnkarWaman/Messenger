@@ -18,7 +18,9 @@ Features-
 
 3. Username and password are required for logging into application.( authentication through database)
 
-4. Currently only group messaging is available.
+4. Two indicators showing network connection status and database connection status
+
+5. Currently only group messaging is available.
 
 Note: JRE is required to run **Messenger.exe** & path of JRE should be added to environment variable named as **PATH** <br />
                     OR   <br />
