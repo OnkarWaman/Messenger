@@ -12,13 +12,13 @@ In this project I've developed a Java desktop application named as "Messenger" w
 
 Features-
 
-1. Messages are encrypted using symmetric encryption before sending to database.
+1. Messages are encrypted using symmetric encryption at user-end before sending to database.
 
 2. Messages are permanently stored on database  So no local memory is used.
 
 3. Username and password are required for logging into application.( authentication through database)
 
-4. Two indicators showing network connection status and database connection status
+4. Two indicators showing network connection status and database connection status.
 
 5. Currently only group messaging is available.
 
