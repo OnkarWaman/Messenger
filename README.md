@@ -12,7 +12,7 @@ In this project I've developed a Java desktop application named as "Messenger" w
 
 Features-
 
-1. Messages are encrypted using symmetric encryption before storing on database.
+1. Messages are encrypted using symmetric encryption before sending to database.
 
 2. Messages are permanently stored on database  So no local memory is used.
 
