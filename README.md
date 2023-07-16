@@ -22,7 +22,7 @@ Features-
 
 5. Currently only group messaging is available.
 
-Note: JRE is required to run **Messenger.exe** & path of JRE should be added to environment variable named as **PATH** <br />
+Note: JRE-17 is required to run **Messenger.exe** & path of JRE-17 should be added to environment variable named as **PATH** <br />
                     OR   <br />
 open the **Code** folder in Eclipse and directly run the file **LoginPage.java**
 
