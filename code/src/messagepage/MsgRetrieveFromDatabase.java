@@ -1,5 +1,6 @@
 package messagepage;
 
+import cipher.Decryption;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -20,10 +21,7 @@ public class MsgRetrieveFromDatabase {
 			msgRetrieveFromDatabaseForFirstTimePstmt = DbConection.con.prepareStatement("select name,dateandtime,message from msginfo");
 			rs = msgRetrieveFromDatabaseForFirstTimePstmt.executeQuery();
 			while(rs.next()) {
-				String temp1 = MessagePage.msgReceiveTextArea.getText();
-				String  temp2 = rs.getString(1)+"\t"+rs.getString(2)+"\n"+rs.getString(3)+"\n\n";
-				MessagePage.msgReceiveTextArea.setText(temp1.concat(temp2));
-				lastMsgDateAndTime =  rs.getString(2);
+				printMessagesToMessageReceiveTextBox();
 			}
 		}
 		else {
@@ -36,22 +34,22 @@ public class MsgRetrieveFromDatabase {
 				msgRetrieveFromDatabaseForOtherTimesPstmt.setString(1, lastMsgDateAndTime);
 				rs = msgRetrieveFromDatabaseForOtherTimesPstmt.executeQuery();
 				while(rs.next()) {
-					String temp1 = MessagePage.msgReceiveTextArea.getText();
-					String  temp2 = rs.getString(1)+"\t"+rs.getString(2)+"\n"+rs.getString(3)+"\n\n";
-					MessagePage.msgReceiveTextArea.setText(temp1.concat(temp2));
-					lastMsgDateAndTime =  rs.getString(2);
+					printMessagesToMessageReceiveTextBox();
 				}
 			}
 			else {
 				msgRetrieveFromDatabaseForFirstTimePstmt = DbConection.con.prepareStatement("select name,dateandtime,message from msginfo");
 				rs = msgRetrieveFromDatabaseForFirstTimePstmt.executeQuery();
 				while(rs.next()) {
-					String temp1 = MessagePage.msgReceiveTextArea.getText();
-					String  temp2 = rs.getString(1)+"\t"+rs.getString(2)+"\n"+rs.getString(3)+"\n\n";
-					MessagePage.msgReceiveTextArea.setText(temp1.concat(temp2));
-					lastMsgDateAndTime =  rs.getString(2);
+					printMessagesToMessageReceiveTextBox();
 				}
 			}
 		}
+	}
+	private static void printMessagesToMessageReceiveTextBox() throws Exception {
+		String temp1 = MessagePage.msgReceiveTextArea.getText();
+		String  temp2 = Decryption.decrypt(rs.getString(1))+"\t"+rs.getString(2)+"\n"+Decryption.decrypt(rs.getString(3))+"\n\n";
+		MessagePage.msgReceiveTextArea.setText(temp1.concat(temp2));
+		lastMsgDateAndTime =  rs.getString(2);
 	}
 }
